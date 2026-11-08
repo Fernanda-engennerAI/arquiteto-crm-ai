@@ -1,0 +1,17 @@
+# Dependências e builds
+node_modules/
+dist/
+
+# Variáveis de ambiente: nunca versionar valores reais
+.env
+.env.*
+!.env.example
+
+# Registros de red teaming: ficam só na sua máquina
+redteam/results/*
+!redteam/results/.gitkeep
+
+# Sistema operacional e editores
+.DS_Store
+Thumbs.db
+.vscode/

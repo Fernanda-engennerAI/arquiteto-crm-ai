@@ -1,0 +1,23 @@
+{
+  "name": "arquiteto-crm-ai",
+  "version": "0.2.0",
+  "private": true,
+  "description": "Assistente de Arquitetura de Soluções CRM com interface web própria e ambiente de red teaming.",
+  "workspaces": [
+    "server",
+    "web"
+  ],
+  "scripts": {
+    "dev": "concurrently -n api,web -c cyan,magenta \"npm run dev -w server\" \"npm run dev -w web\"",
+    "dev:api": "npm run dev -w server",
+    "dev:web": "npm run dev -w web",
+    "build": "npm run build -w web",
+    "redteam:lock": "npm run lock -w server"
+  },
+  "devDependencies": {
+    "concurrently": "9.1.2"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}
