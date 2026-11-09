@@ -1,4 +1,5 @@
 import { Router } from 'express';
+import { requireDemoAuth } from '../auth.js';
 import { config } from '../config.js';
 import { AppError } from '../errors.js';
 import { loadPrompt } from '../prompts.js';
@@ -9,7 +10,7 @@ export const chatRouter = Router();
 
 // Rota dos usuários finais. A versão do prompt vem só do servidor (PROMPT_VERSION);
 // qualquer campo de versão enviado pelo navegador é ignorado.
-chatRouter.post('/', async (req, res, next) => {
+chatRouter.post('/', requireDemoAuth, async (req, res, next) => {
   try {
     const messages = validateMessages(req.body?.messages);
     const prompt = await loadPrompt(config.promptVersion);
