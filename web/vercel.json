@@ -1,0 +1,8 @@
+{
+  "rewrites": [
+    {
+      "source": "/api/:path*",
+      "destination": "https://arquiteto-crm-ai.onrender.com/api/:path*"
+    }
+  ]
+}
